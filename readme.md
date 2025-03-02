@@ -10,7 +10,6 @@ The **Image Entropy Generator** is a Python-based tool that generates a unique e
 
 This script can be useful for cryptographic applications, random number generation, or unique identifier creation based on image properties.
 
----
 
 ## ✨ Features
 
@@ -20,7 +19,6 @@ This script can be useful for cryptographic applications, random number generati
 - **Cryptographic Hashing**: Uses SHA-256 to enhance randomness and uniqueness.
 - **Configurable Length**: Allows users to specify the length of the final entropy value (up to 100 characters).
 
----
 
 ## 📦 Requirements
 
@@ -32,7 +30,6 @@ Ensure you have Python 3 installed, along with the necessary dependencies.
 pip install -r requirements.txt
 ```
 
----
 
 ## 📂 Project Files
 
@@ -43,7 +40,6 @@ pip install -r requirements.txt
 | `requirements.txt` | List of required Python dependencies. |
 | `sample1.jpg` | Sample image for testing the script. |
 
----
 
 ## 🚀 Usage
 
@@ -64,7 +60,6 @@ python main.py --length <desired_length>
 python main.py --length 50
 ```
 
----
 
 ## 🖥️ Expected Output
 
@@ -84,7 +79,6 @@ SHA256 Checksum: 3a7d3e8b9f6c...
 Final product (length 50): 239817462392847612039472...
 ```
 
----
 
 ## ⚙️ Customization
 
@@ -92,19 +86,16 @@ Final product (length 50): 239817462392847612039472...
 - **Use a different image** by replacing `sample1.jpg` with your own.
 - **Update the cascade classifier** by using a different `cascade.xml` file if needed.
 
----
 
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to fork the repository and submit a pull request with improvements or bug fixes.
 
----
 
 ## 📧 Contact
 
 For any questions or suggestions, feel free to open an issue or reach out via GitHub.
 
----
 
 ## 📜 License
 
