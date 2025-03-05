@@ -8,8 +8,6 @@ The **Image Entropy Generator** is a Python-based tool that generates a unique e
 - A SHA-256 checksum of the image file.
 - Statistical entropy derived from pixel values.
 
-This script can be useful for cryptographic applications, random number generation, or unique identifier creation based on image properties.
-
 
 ## ✨ Features
 
