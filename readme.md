@@ -85,16 +85,7 @@ Final product (length 50): 239817462392847612039472...
 - **Update the cascade classifier** by using a different `cascade.xml` file if needed.
 
 
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to fork the repository and submit a pull request with improvements or bug fixes.
-
-
-## 📧 Contact
-
-For any questions or suggestions, feel free to open an issue or reach out via GitHub.
-
-
-## 📜 License
+## 📄 License
 
 This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+
