@@ -43,7 +43,7 @@ image-entropy-generator/
 ### 1. Cloner le projet
 
 ```bash
-git clone [URL_DU_REPO]
+git clone https://github.com/ArtanisInc/image-entropy-generator-formation
 cd image-entropy-generator
 ```
 
@@ -151,3 +151,4 @@ Ce projet combine plusieurs domaines de l'informatique :
 - **Cryptographie appliquée** : Génération d'entropie sécurisée
 - **Programmation système** : Manipulation de fichiers et métadonnées
 - **Statistiques** : Calculs d'entropie et de variance
+
