@@ -1,104 +1,153 @@
-# Blockchain Simulation - Exercice de Formation
+# Image Entropy Generator - Exercice de Formation
 
-Ce projet est un exercice de formation qui implémente une simulation éducative de blockchain en Python pour comprendre les principes fondamentaux de cette technologie.
+Ce projet est un exercice de formation qui implémente un générateur d'entropie basé sur l'analyse d'images en Python, démontrant l'utilisation de la vision par ordinateur et de la cryptographie.
 
 ## Description
 
-Cette simulation démontre les concepts clés d'une blockchain :
-- **Proof of Work (PoW)** : Mécanisme de consensus par résolution de puzzles cryptographiques
-- **Intégrité de la chaîne** : Validation et détection de corruption des blocs
-- **Calcul de Merkle Root** : Structure hiérarchique des hash pour l'intégrité des transactions
-- **Système décentralisé** : Simulation d'interactions entre pairs (peers)
+Cet outil génère une valeur d'entropie unique dérivée d'une image en combinant :
+- **Détection de visages** : Utilisation d'OpenCV avec classificateur Haar Cascade
+- **Analyse statistique** : Calcul d'entropie basé sur la distribution des pixels
+- **Horodatage** : Intégration du timestamp de création du fichier
+- **Hachage cryptographique** : Utilisation de SHA-256 pour renforcer l'unicité
 
 ## Objectifs Pédagogiques
 
 Ce projet illustre :
-- Les mécanismes fondamentaux d'une blockchain
-- Le fonctionnement du Proof of Work
-- L'immutabilité et la validation des données
-- La détection de tentatives de corruption
-- Les principes des systèmes décentralisés
+- Les techniques de vision par ordinateur (détection de visages)
+- Le calcul d'entropie et l'analyse statistique d'images
+- L'utilisation de fonctions de hachage cryptographiques
+- La manipulation de métadonnées de fichiers
+- L'intégration de multiples sources d'entropie
 
 ## Prérequis
 
 - Python 3.6+
-- Modules standard Python (hashlib, time, json)
+- OpenCV pour la vision par ordinateur
+- NumPy pour les calculs statistiques
+- hashlib (module standard Python)
 
 ## Structure du Projet
 
 ```
-blockchain-simulation/
-├── blockchain.py           # Code principal de la simulation
-├── README.md              # Documentation
-└── [autres fichiers]      # Fichiers de support
+image-entropy-generator/
+├── main.py              # Script principal
+├── cascade.xml          # Classificateur Haar Cascade
+├── requirements.txt     # Dépendances Python
+├── sample1.jpg         # Image d'exemple
+├── README.md           # Documentation
+└── LICENSE             # Licence MIT
+```
+
+## Installation
+
+### 1. Cloner le projet
+
+```bash
+git clone [URL_DU_REPO]
+cd image-entropy-generator
+```
+
+### 2. Installer les dépendances
+
+```bash
+pip install -r requirements.txt
 ```
 
 ## Utilisation
 
-### 1. Lancement de la simulation normale
+### Génération d'entropie basique
 
 ```bash
-python blockchain.py
+python main.py --length 50
 ```
 
-### 2. Test avec corruption manuelle
+### Exemples d'utilisation
 
 ```bash
-python blockchain.py -corrupt
-```
+# Entropie de 32 caractères
+python main.py --length 32
 
-Cette option permet de tester la capacité de la blockchain à détecter les tentatives de modification malveillante.
+# Entropie maximale (100 caractères)
+python main.py --length 100
+
+# Test avec votre propre image
+# (remplacez sample1.jpg par votre image)
+python main.py --length 64
+```
 
 ## Fonctionnalités Implémentées
 
-### ✅ Mining et Proof of Work
-- Résolution de puzzles computationnels
-- Validation des blocs par consensus
+### ✅ Détection de Visages
+- Utilisation du classificateur Haar Cascade pré-entraîné
+- Comptage automatique des visages détectés
 
-### ✅ Validation d'Intégrité
-- Détection automatique des blocs corrompus
-- Vérification de l'enchaînement des hash
+### ✅ Calcul d'Entropie Statistique
+- Analyse de la distribution des pixels
+- Calcul de variance et d'entropie de Shannon
 
-### ✅ Merkle Root
-- Calcul hiérarchique des hash de transactions
-- Vérification de l'intégrité des données
+### ✅ Intégration Temporelle
+- Extraction du timestamp de création du fichier
+- Précision jusqu'à la milliseconde
 
-### ✅ Simulation Multi-Peers
-- Interaction entre plusieurs nœuds
-- Démonstration de la décentralisation
+### ✅ Hachage Cryptographique
+- Génération de checksum SHA-256
+- Combinaison de multiples sources d'entropie
+
+### ✅ Personnalisation
+- Longueur configurable (jusqu'à 100 caractères)
+- Support de différents formats d'images
+
+## Sortie Attendue
+
+```
+Number of faces detected: 2
+Creation date and time: 01/03/2025 15:45:32.789
+SHA256 Checksum: 3a7d3e8b9f6c...
+Final product (length 50): 239817462392847612039472...
+```
+
+## Concepts Techniques Démontrés
+
+1. **Vision par Ordinateur** : Détection d'objets avec OpenCV
+2. **Entropie Informationnelle** : Mesure du désordre dans les données
+3. **Cryptographie** : Fonctions de hachage sécurisées
+4. **Métadonnées** : Extraction d'informations système
+5. **Combinaison d'Entropie** : Fusion de sources multiples
 
 ## Personnalisation
 
-Vous pouvez ajuster :
-- **Difficulté du PoW** : Modifier la complexité des puzzles
-- **Nombre de peers** : Étendre la simulation réseau
-- **Taille des blocs** : Adapter selon vos besoins d'apprentissage
+Vous pouvez modifier :
+- **MAX_LENGTH** : Changer la longueur maximale autorisée
+- **Image source** : Utiliser vos propres images
+- **Classificateur** : Remplacer `cascade.xml` par d'autres modèles
+- **Algorithme de hachage** : Expérimenter avec d'autres fonctions
 
-## Concepts Blockchain Démontrés
+## Extensions Possibles
 
-1. **Immutabilité** : Une fois ajouté, un bloc ne peut être modifié sans casser la chaîne
-2. **Consensus** : Validation collective par Proof of Work
-3. **Transparence** : Tous les participants peuvent vérifier la validité
-4. **Décentralisation** : Aucun point de contrôle unique
+- Support de multiples images simultanément
+- Détection d'autres objets (yeux, sourires, etc.)
+- Interface graphique pour sélection d'images
+- Export des résultats en différents formats
+- Analyse comparative d'entropie entre images
 
 ## Commandes Utiles
 
 ```bash
-# Simulation standard
-python blockchain.py
+# Test avec l'image par défaut
+python main.py --length 32
 
-# Test de résistance à la corruption
-python blockchain.py -corrupt
+# Vérification des dépendances
+pip list
 
-# Vérification de l'intégrité
-# (intégré dans la simulation)
+# Test de performance
+time python main.py --length 100
 ```
 
 ## Notes de Formation
 
-Ce projet sert d'introduction pratique aux :
-- Technologies de registres distribués (DLT)
-- Cryptographie appliquée (hashing, validation)
-- Algorithmes de consensus
-- Architectures décentralisées
-- Détection d'anomalies dans les systèmes distribués
+Ce projet combine plusieurs domaines de l'informatique :
+- **Traitement d'images** : OpenCV, analyse de pixels
+- **Machine Learning** : Classificateurs pré-entraînés
+- **Cryptographie appliquée** : Génération d'entropie sécurisée
+- **Programmation système** : Manipulation de fichiers et métadonnées
+- **Statistiques** : Calculs d'entropie et de variance
