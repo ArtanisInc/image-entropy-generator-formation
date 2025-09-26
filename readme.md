@@ -1,91 +1,104 @@
-# 📸 Image Entropy Generator
+# Blockchain Simulation - Exercice de Formation
 
-## Overview
-The **Image Entropy Generator** is a Python-based tool that generates a unique entropy value derived from an image. It leverages OpenCV for face detection, NumPy for statistical calculations, and hashlib for cryptographic hashing. The generated entropy value incorporates:
+Ce projet est un exercice de formation qui implémente une simulation éducative de blockchain en Python pour comprendre les principes fondamentaux de cette technologie.
 
-- The number of detected faces.
-- The image file's creation timestamp.
-- A SHA-256 checksum of the image file.
-- Statistical entropy derived from pixel values.
+## Description
 
+Cette simulation démontre les concepts clés d'une blockchain :
+- **Proof of Work (PoW)** : Mécanisme de consensus par résolution de puzzles cryptographiques
+- **Intégrité de la chaîne** : Validation et détection de corruption des blocs
+- **Calcul de Merkle Root** : Structure hiérarchique des hash pour l'intégrité des transactions
+- **Système décentralisé** : Simulation d'interactions entre pairs (peers)
 
-## ✨ Features
+## Objectifs Pédagogiques
 
-- **Face Detection**: Uses a pre-trained Haar Cascade classifier to detect faces in an image.
-- **Image Entropy Calculation**: Computes entropy using pixel distribution and statistical variance.
-- **Timestamp Integration**: Incorporates precise file creation time for uniqueness.
-- **Cryptographic Hashing**: Uses SHA-256 to enhance randomness and uniqueness.
-- **Configurable Length**: Allows users to specify the length of the final entropy value (up to 100 characters).
+Ce projet illustre :
+- Les mécanismes fondamentaux d'une blockchain
+- Le fonctionnement du Proof of Work
+- L'immutabilité et la validation des données
+- La détection de tentatives de corruption
+- Les principes des systèmes décentralisés
 
+## Prérequis
 
-## 📦 Requirements
+- Python 3.6+
+- Modules standard Python (hashlib, time, json)
 
-Ensure you have Python 3 installed, along with the necessary dependencies.
+## Structure du Projet
 
-### Install Dependencies
+```
+blockchain-simulation/
+├── blockchain.py           # Code principal de la simulation
+├── README.md              # Documentation
+└── [autres fichiers]      # Fichiers de support
+```
+
+## Utilisation
+
+### 1. Lancement de la simulation normale
 
 ```bash
-pip install -r requirements.txt
+python blockchain.py
 ```
 
-
-## 📂 Project Files
-
-| File | Description |
-|------|-------------|
-| `main.py` | Main script for generating the entropy value. |
-| `cascade.xml` | Haar Cascade XML file used for face detection. |
-| `requirements.txt` | List of required Python dependencies. |
-| `sample1.jpg` | Sample image for testing the script. |
-
-
-## 🚀 Usage
-
-### Running the Script
-
-1. Ensure your image is in the same directory as the script.
-2. Run the script from the command line with a specified length for the entropy value:
+### 2. Test avec corruption manuelle
 
 ```bash
-python main.py --length <desired_length>
+python blockchain.py -corrupt
 ```
 
-📌 Replace `<desired_length>` with the number of characters you want (max: 100).
+Cette option permet de tester la capacité de la blockchain à détecter les tentatives de modification malveillante.
 
-### Example:
+## Fonctionnalités Implémentées
+
+### ✅ Mining et Proof of Work
+- Résolution de puzzles computationnels
+- Validation des blocs par consensus
+
+### ✅ Validation d'Intégrité
+- Détection automatique des blocs corrompus
+- Vérification de l'enchaînement des hash
+
+### ✅ Merkle Root
+- Calcul hiérarchique des hash de transactions
+- Vérification de l'intégrité des données
+
+### ✅ Simulation Multi-Peers
+- Interaction entre plusieurs nœuds
+- Démonstration de la décentralisation
+
+## Personnalisation
+
+Vous pouvez ajuster :
+- **Difficulté du PoW** : Modifier la complexité des puzzles
+- **Nombre de peers** : Étendre la simulation réseau
+- **Taille des blocs** : Adapter selon vos besoins d'apprentissage
+
+## Concepts Blockchain Démontrés
+
+1. **Immutabilité** : Une fois ajouté, un bloc ne peut être modifié sans casser la chaîne
+2. **Consensus** : Validation collective par Proof of Work
+3. **Transparence** : Tous les participants peuvent vérifier la validité
+4. **Décentralisation** : Aucun point de contrôle unique
+
+## Commandes Utiles
 
 ```bash
-python main.py --length 50
+# Simulation standard
+python blockchain.py
+
+# Test de résistance à la corruption
+python blockchain.py -corrupt
+
+# Vérification de l'intégrité
+# (intégré dans la simulation)
 ```
 
+## Notes de Formation
 
-## 🖥️ Expected Output
-
-When executed, the script will display:
-
-- Number of faces detected in the image.
-- Creation timestamp of the image file.
-- SHA-256 checksum of the image.
-- Final entropy value of the specified length.
-
-### Sample Output:
-
-```
-Number of faces detected: 2
-Creation date and time: 01/03/2025 15:45:32.789
-SHA256 Checksum: 3a7d3e8b9f6c...
-Final product (length 50): 239817462392847612039472...
-```
-
-
-## ⚙️ Customization
-
-- **Modify `MAX_LENGTH`** in `main.py` to change the maximum allowable length.
-- **Use a different image** by replacing `sample1.jpg` with your own.
-- **Update the cascade classifier** by using a different `cascade.xml` file if needed.
-
-
-## 📄 License
-
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
-
+Ce projet sert d'introduction pratique aux :
+- Technologies de registres distribués (DLT)
+- Cryptographie appliquée (hashing, validation)
+- Algorithmes de consensus
+- Architectures décentralisées
+- Détection d'anomalies dans les systèmes distribués
