@@ -1,23 +1,10 @@
 # Image Entropy Generator - Exercice de Formation
 
-Ce projet est un exercice de formation qui implémente un générateur d'entropie basé sur l'analyse d'images en Python, démontrant l'utilisation de la vision par ordinateur et de la cryptographie.
-
-## Description
-
 Cet outil génère une valeur d'entropie unique dérivée d'une image en combinant :
 - **Détection de visages** : Utilisation d'OpenCV avec classificateur Haar Cascade
 - **Analyse statistique** : Calcul d'entropie basé sur la distribution des pixels
 - **Horodatage** : Intégration du timestamp de création du fichier
 - **Hachage cryptographique** : Utilisation de SHA-256 pour renforcer l'unicité
-
-## Objectifs Pédagogiques
-
-Ce projet illustre :
-- Les techniques de vision par ordinateur (détection de visages)
-- Le calcul d'entropie et l'analyse statistique d'images
-- L'utilisation de fonctions de hachage cryptographiques
-- La manipulation de métadonnées de fichiers
-- L'intégration de multiples sources d'entropie
 
 ## Prérequis
 
@@ -143,12 +130,4 @@ pip list
 time python main.py --length 100
 ```
 
-## Notes de Formation
-
-Ce projet combine plusieurs domaines de l'informatique :
-- **Traitement d'images** : OpenCV, analyse de pixels
-- **Machine Learning** : Classificateurs pré-entraînés
-- **Cryptographie appliquée** : Génération d'entropie sécurisée
-- **Programmation système** : Manipulation de fichiers et métadonnées
-- **Statistiques** : Calculs d'entropie et de variance
 
